@@ -19,26 +19,26 @@ import ContactForm from '../components/ContactForm';
 gsap.registerPlugin(ScrollTrigger);
 
 // Office locations data
-const officeLocations = [
-  {
-    city: "San Francisco",
-    address: "123 Innovation Drive, Tech Valley, CA 94103",
-    phone: "+1 (415) 555-1234",
-    email: "sf@nexustech.com"
-  },
-  {
-    city: "New York",
-    address: "456 Digital Avenue, Suite 800, NY 10001",
-    phone: "+1 (212) 555-5678",
-    email: "nyc@nexustech.com"
-  },
-  {
-    city: "London",
-    address: "78 Tech Square, Shoreditch, London EC2A 4RQ",
-    phone: "+44 20 7123 4567",
-    email: "london@nexustech.com"
-  }
-];
+// const officeLocations = [
+//   {
+//     city: "San Francisco",
+//     address: "123 Innovation Drive, Tech Valley, CA 94103",
+//     phone: "+1 (415) 555-1234",
+//     email: "sf@nexustech.com"
+//   },
+//   {
+//     city: "New York",
+//     address: "456 Digital Avenue, Suite 800, NY 10001",
+//     phone: "+1 (212) 555-5678",
+//     email: "nyc@nexustech.com"
+//   },
+//   {
+//     city: "London",
+//     address: "78 Tech Square, Shoreditch, London EC2A 4RQ",
+//     phone: "+44 20 7123 4567",
+//     email: "london@nexustech.com"
+//   }
+// ];
 
 const Contact: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                 <h3 className="text-2xl font-orbitron font-bold mb-6">Contact Information</h3>
                 
                 <div className="space-y-5">
-                  <div className="contact-info-item flex items-start opacity-0">
+                  {/* <div className="contact-info-item flex items-start opacity-0">
                     <div className="bg-primary/20 p-3 rounded-lg mr-4 text-primary shrink-0">
                       <MapPin size={20} />
                     </div>
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
                         123 Innovation Drive, Tech Valley, CA 94103, United States
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                   
                   <div className="contact-info-item flex items-start opacity-0">
                     <div className="bg-primary/20 p-3 rounded-lg mr-4 text-primary shrink-0">
@@ -150,8 +150,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Phone</h4>
-                      <a href="tel:+11234567890" className="text-neutral-300 hover:text-primary transition-colors">
-                        +1 (123) 456-7890
+                      <a href="tel:+91 7405950263" className="text-neutral-300 hover:text-primary transition-colors">
+                        +91 7405950263
                       </a>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ const Contact: React.FC = () => {
                     <div>
                       <h4 className="font-bold mb-1">Email</h4>
                       <a href="mailto:hello@nexustech.com" className="text-neutral-300 hover:text-primary transition-colors">
-                        hello@nexustech.com
+                        codenixlabs@gmail.com
                       </a>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
               </motion.div>
               
               {/* Map */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -223,14 +223,14 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>
       </section>
       
       {/* Global Offices */}
-      <section className="py-20 bg-neutral-900 relative">
+      {/* <section className="py-20 bg-neutral-900 relative">
         <div className="absolute inset-0 bg-glow opacity-20"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -294,7 +294,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
+       */}
       {/* FAQ Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

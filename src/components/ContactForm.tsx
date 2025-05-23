@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
-
+import emailjs from 'emailjs-com';
 const ContactForm: React.FC = () => {
   const [formState, setFormState] = useState({
     name: '',
@@ -25,7 +25,7 @@ const ContactForm: React.FC = () => {
     
     // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+       await emailjs.send('service_s3nrghq', 'template_cignmvg', formState, 'bQ7rWbUPT5hPo0z33');
       setSubmitSuccess(true);
       setFormState({
         name: '',

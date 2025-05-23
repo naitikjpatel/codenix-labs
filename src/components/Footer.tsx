@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <Link to="/" className="flex items-center space-x-2 mb-4 hover-effect inline-block">
               <Code2 size={32} className="text-primary" />
               <span className="font-orbitron text-xl font-bold">
-                NEXUS<span className="text-primary">TECH</span>
+                CODENIX<span className="text-primary ms-0.5">LABS</span>
               </span>
             </Link>
             <p className="text-neutral-300 mb-6">
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+              <a href="https://www.linkedin.com/company/codenixlabs/" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
@@ -93,19 +93,19 @@ const Footer: React.FC = () => {
               <li className="flex items-start">
                 <MapPin size={20} className="text-primary shrink-0 mt-1 mr-3" />
                 <span className="text-neutral-300">
-                  123 Innovation Drive, Tech Valley, CA 94103
+                  Ahmdabad, Gujarat, India
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-primary shrink-0 mr-3" />
-                <a href="tel:+11234567890" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
-                  +1 (123) 456-7890
+                <a href="tel:+91 7405950263" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+                  +91 7405950263
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-primary shrink-0 mr-3" />
-                <a href="mailto:hello@nexustech.com" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
-                  hello@nexustech.com
+                <a href="mailto:codenixlabs@gmail.com" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+                  codenixlabs@gmail.com
                 </a>
               </li>
             </ul>

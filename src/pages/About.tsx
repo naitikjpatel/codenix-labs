@@ -203,35 +203,7 @@ const About: React.FC = () => {
         </div>
       </section>
       
-      {/* Company Timeline */}
-      <section className="py-20 bg-neutral-900 relative">
-        <div className="absolute inset-0 bg-glow opacity-20"></div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <motion.h2 
-              className="section-title neon-text"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Our Journey
-            </motion.h2>
-            <motion.p 
-              className="section-subtitle"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              From our humble beginnings to where we are today
-            </motion.p>
-          </div>
-          
-          <Timeline />
-        </div>
-      </section>
+      
       
       {/* Our Values */}
       <section className="py-20 values-section relative">
@@ -319,59 +291,98 @@ const About: React.FC = () => {
         </div>
       </section>
       
-      {/* Stats */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass p-8 md:p-12 rounded-xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <div className="text-5xl font-orbitron font-bold text-primary mb-2">10+</div>
-                <p className="text-lg">Years of Experience</p>
-              </motion.div>
-              
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <div className="text-5xl font-orbitron font-bold text-primary mb-2">250+</div>
-                <p className="text-lg">Projects Completed</p>
-              </motion.div>
-              
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <div className="text-5xl font-orbitron font-bold text-primary mb-2">50+</div>
-                <p className="text-lg">Team Members</p>
-              </motion.div>
-              
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <div className="text-5xl font-orbitron font-bold text-primary mb-2">15+</div>
-                <p className="text-lg">Industry Awards</p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+      <section className="py-20 bg-neutral-900 relative">
+  <div className="absolute inset-0 bg-glow opacity-20"></div>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center mb-16">
+      <motion.h2
+        className="section-title neon-text"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Mission & Vision
+      </motion.h2>
+      <motion.p
+        className="section-subtitle"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        What drives us and where we're headed
+      </motion.p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <motion.div
+        className="glass p-6 rounded-xl"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-xl font-bold mb-3">Our Mission</h3>
+        <p className="text-neutral-300">
+          To deliver cutting-edge digital solutions that drive innovation, boost efficiency, and empower businesses globally.
+        </p>
+      </motion.div>
+      <motion.div
+        className="glass p-6 rounded-xl"
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h3 className="text-xl font-bold mb-3">Our Vision</h3>
+        <p className="text-neutral-300">
+          To be the most trusted and sought-after technology partner, transforming industries through innovation and excellence.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+{/* Technologies Section */}
+<section className="py-20 relative values-section">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <motion.h2 
+        className="section-title neon-text"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Technologies We Use
+      </motion.h2>
+      <motion.p 
+        className="section-subtitle"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Our modern tech stack powers real-world impact
+      </motion.p>
+    </div>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+      {['React', 'Flutter', 'Node.js', 'Spring Boot', 'Python', 'AWS', 'Docker', 'PostgreSQL', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'Firebase'].map((tech, idx) => (
+        <motion.div
+          key={idx}
+          className="glass py-4 rounded-xl text-primary font-semibold text-lg hover:scale-105 transition-transform duration-300"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 * idx, duration: 0.4 }}
+        >
+          {tech}
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* CTA Section */}
       <section className="py-20 bg-neutral-900 relative">
         <div className="absolute inset-0 bg-glow opacity-30"></div>

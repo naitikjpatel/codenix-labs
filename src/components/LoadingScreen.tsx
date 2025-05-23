@@ -57,7 +57,7 @@ const LoadingScreen: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
       >
-        NEXUS<span className="text-primary">TECH</span>
+        CODENIX<span className="text-primary ms-0.5">LABS</span>
       </motion.h1>
       
       <div className="w-64 h-1 bg-neutral-800 rounded-full mt-8 overflow-hidden">

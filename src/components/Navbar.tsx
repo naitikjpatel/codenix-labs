@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
-    { name: 'Portfolio', path: '/portfolio' },
+    // { name: 'Portfolio', path: '/portfolio' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
               <Code2 size={32} />
             </motion.div>
             <span className="font-orbitron text-xl font-bold">
-              NEXUS<span className="text-primary">TECH</span>
+              CODENIX <span className="text-primary ms-0.5">LABS</span>
             </span>
           </Link>
 
@@ -150,6 +150,92 @@ const Navbar: React.FC = () => {
       </AnimatePresence>
     </nav>
   );
+
+
+  {/* Company Timeline */}
+        {/* <section className="py-20 bg-neutral-900 relative">
+          <div className="absolute inset-0 bg-glow opacity-20"></div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="section-title neon-text"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                Our Journey
+              </motion.h2>
+              <motion.p 
+                className="section-subtitle"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                From our humble beginnings to where we are today
+              </motion.p>
+            </div>
+            
+            <Timeline />
+          </div>
+        </section> */}
+
+
+        
+      {/* Stats */}
+      {/* <section className="py-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass p-8 md:p-12 rounded-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="text-5xl font-orbitron font-bold text-primary mb-2">10+</div>
+                <p className="text-lg">Years of Experience</p>
+              </motion.div>
+              
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="text-5xl font-orbitron font-bold text-primary mb-2">250+</div>
+                <p className="text-lg">Projects Completed</p>
+              </motion.div>
+              
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="text-5xl font-orbitron font-bold text-primary mb-2">50+</div>
+                <p className="text-lg">Team Members</p>
+              </motion.div>
+              
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="text-5xl font-orbitron font-bold text-primary mb-2">15+</div>
+                <p className="text-lg">Industry Awards</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section> */}
 };
 
 export default Navbar;

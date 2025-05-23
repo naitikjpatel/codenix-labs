@@ -37,6 +37,7 @@ function App() {
       <Cursor />
       <Navbar />
       <AnimatePresence mode="wait">
+        <ScrollToTop/>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -51,3 +52,13 @@ function App() {
 }
 
 export default App;
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  }, [pathname]);
+
+  return null;
+};

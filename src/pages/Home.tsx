@@ -156,10 +156,12 @@ const Home: React.FC = () => {
       </section>
       
       {/* Stats Counter */}
-      <StatsCounter />
+      {/* cl : Counter To Add a Experience ,Project ,Active User */}
+      {/* <StatsCounter /> */}
       
       {/* Featured Projects */}
-      <section className="py-20 relative overflow-hidden">
+      {/* cl : potfolio project */}
+      {/* <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2 
@@ -195,14 +197,14 @@ const Home: React.FC = () => {
                   <div className="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm group-hover:bg-neutral-900/40 transition-all duration-300 z-10"></div>
                   
                   {/* Project Image */}
-                  <img 
+                  {/* <img 
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  /> */}
                   
                   {/* Content Overlay */}
-                  <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
+                  {/* <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
                     <span className="text-primary text-sm font-medium mb-2">
                       {project.category}
                     </span>
@@ -216,7 +218,7 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </motion.div>
-              </Link>
+              </Link> 
             ))}
           </div>
           
@@ -226,7 +228,7 @@ const Home: React.FC = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* CTA Section */}
       <section className="py-20 bg-neutral-900 relative">
