@@ -20,7 +20,6 @@ const ContactForm = () => {
     publicKey: import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
   };
 
-  console.log(EMAILJS_CONFIG);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
