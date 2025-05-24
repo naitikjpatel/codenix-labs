@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-neutral-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} NEXUSTECH. All rights reserved.
+            &copy; {new Date().getFullYear()} CODENIX LABS. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
