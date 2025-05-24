@@ -15,10 +15,12 @@ const ContactForm = () => {
   const [submitError, setSubmitError] = useState('');
 
   const EMAILJS_CONFIG = {
-    serviceId: import.meta.env.EMAIL_JS_SERVICE_ID, 
-    templateId: import.meta.env.EMAIL_JS_TEMPLATE_ID, 
-    publicKey: import.meta.env.EMAIL_JS_PUBLIC_KEY, 
+    serviceId: import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+    templateId: import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
   };
+
+  console.log(EMAILJS_CONFIG);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -106,7 +108,7 @@ const ContactForm = () => {
         setSubmitSuccess(false);
       }, 5000);
 
-    } catch (error : any | unknown) {
+    } catch (error: any | unknown) {
       console.error('Email sending error:', error);
 
       if (error.status === 400) {
@@ -313,8 +315,8 @@ const ContactForm = () => {
               type="submit"
               disabled={isSubmitting}
               className={`w-full flex items-center justify-center px-6 py-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] ${isSubmitting
-                  ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/25'
+                ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
+                : 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg hover:shadow-primary/25'
                 }`}
             >
               {isSubmitting ? (
