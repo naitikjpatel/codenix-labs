@@ -125,9 +125,9 @@ const HeroSection: React.FC = () => {
             <Link to="/contact" className="btn btn-primary neon-border hover-effect">
               Start Your Project
             </Link>
-            <Link to="/portfolio" className="btn btn-outline hover-effect">
+            {/* <Link to="/portfolio" className="btn btn-outline hover-effect">
               Explore Our Work
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
         

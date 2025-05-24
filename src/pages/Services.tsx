@@ -237,10 +237,11 @@ const Services: React.FC = () => {
           className={`py-20 ${index % 2 === 0 ? 'bg-neutral-900' : ''} service-section relative`}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Service Info */}
-              <div className={`w-full lg:w-1/2 ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+              <div className={`w-full ${index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                 <motion.div
+                  className="relative z-10"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -268,14 +269,22 @@ const Services: React.FC = () => {
                     ))}
                   </div>
                   
-                  <Link to="/contact" className="btn btn-primary neon-border hover-effect">
+                  <Link 
+                    to="/contact" 
+                    className="btn btn-primary neon-border hover-effect inline-block relative z-20"
+                    style={{ 
+                      position: 'relative',
+                      zIndex: 20,
+                      pointerEvents: 'auto'
+                    }}
+                  >
                     Get Started
                   </Link>
                 </motion.div>
               </div>
               
               {/* Image/Illustration */}
-              <div className={`w-full lg:w-1/2 ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+              <div className={`w-full ${index % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <motion.div
                   className="relative"
                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
