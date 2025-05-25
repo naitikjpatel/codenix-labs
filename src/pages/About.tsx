@@ -164,14 +164,10 @@ const About: React.FC = () => {
               
               <div className="space-y-4 text-lg">
                 <p>
-                  Founded in 2015, NEXUSTECH began with a simple mission: to help businesses leverage technology 
-                  to achieve their full potential. What started as a small team of passionate developers has 
-                  grown into a comprehensive digital agency with expertise across the technology spectrum.
+                  At Codenix Labs, we are passionate technologists, creators, and problem-solvers committed to delivering innovative IT solutions that drive growth and digital transformation for businesses of all sizes
                 </p>
                 <p>
-                  Throughout our journey, we've remained committed to our core values of innovation, excellence, 
-                  and client satisfaction. We believe that great technology should empower businesses and enhance 
-                  human experiences, not complicate them.
+                 Founded with a vision to simplify technology and empower progress, Codenix Labs brings together a team of skilled professionals with expertise across software development, web & mobile app development, cloud solutions, UI/UX design, and IT consulting. Whether you're a startup looking for a powerful digital presence or an enterprise in need of scalable solutions, we provide tailor-made services designed to meet your specific goals.
                 </p>
                 <p>
                   Today, we're proud to work with clients ranging from ambitious startups to established 
@@ -250,7 +246,7 @@ const About: React.FC = () => {
       </section>
       
       {/* Team Section */}
-      <section className="py-20 bg-neutral-900 relative">
+{/*       <section className="py-20 bg-neutral-900 relative">
         <div className="absolute inset-0 bg-glow opacity-20"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -341,7 +337,7 @@ const About: React.FC = () => {
       </motion.div>
     </div>
   </div>
-</section>
+</section> */}
 
 {/* Technologies Section */}
 <section className="py-20 relative values-section">
