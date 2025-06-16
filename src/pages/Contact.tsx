@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
-  MapPin, 
+  // MapPin, 
   Phone, 
   Mail, 
   Clock,
   Instagram, 
   Twitter, 
   Linkedin, 
-  Github
+  // Github
 } from 'lucide-react';
 
 import ContactForm from '../components/ContactForm';
@@ -187,18 +187,18 @@ const Contact: React.FC = () => {
                 <div className="mt-8">
                   <h4 className="font-bold mb-4">Follow Us</h4>
                   <div className="flex space-x-4">
-                    <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
+                    <a href="https://www.instagram.com/codenixlabs/" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Instagram size={18} />
                     </a>
-                    <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
+                    <a href="https://x.com/codenixlabs" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Twitter size={18} />
                     </a>
-                    <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
+                    <a href="https://www.linkedin.com/company/codenixlabs/" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Linkedin size={18} />
                     </a>
-                    <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
+                    {/* <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Github size={18} />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </motion.div>
