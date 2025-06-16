@@ -8,7 +8,6 @@ import {
   Instagram, 
   Twitter, 
   Linkedin, 
-  Github,
   ArrowRight
 } from 'lucide-react';
 
@@ -19,7 +18,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Link to="/" className="flex items-center space-x-2 mb-4 hover-effect inline-block">
+            <Link to="/" className="items-center space-x-2 mb-4 hover-effect inline-block">
               <Code2 size={32} className="text-primary" />
               <span className="font-orbitron text-xl font-bold">
                 CODENIX<span className="text-primary ms-0.5">LABS</span>
@@ -29,18 +28,18 @@ const Footer: React.FC = () => {
               Transforming ideas into exceptional digital experiences through innovative technology solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+              <a href="https://www.instagram.com/codenixlabs/" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+              <a href="https://x.com/codenixlabs" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Twitter size={20} />
               </a>
               <a href="https://www.linkedin.com/company/codenixlabs/" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
+              {/* <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Github size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -48,7 +47,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-orbitron text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Services', 'Portfolio', 'About', 'Contact'].map((item) => (
+              {['Home', 'Services','About', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
