@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { Code, Smartphone, Globe, Palette, LineChart, ArrowRight, Users, DivideIcon as LucideIcon, CheckCircle, Calendar, Clock, User } from 'lucide-react';
+import { Code, Smartphone, Globe, Palette, LineChart, ArrowRight, Users, DivideIcon as LucideIcon, CheckCircle, Calendar, Clock, User, BrainCircuit } from 'lucide-react';
 
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
@@ -39,9 +39,9 @@ const services: Service[] = [
     icon: <Palette size={24} />
   },
   {
-    title: "Digital Marketing",
-    description: "Data-driven strategies to increase your online presence and drive measurable business growth.",
-    icon: <LineChart size={24} />
+    title: "AI Integration",
+    description: "Harness the power of artificial intelligence and machine learning to automate processes, enhance customer experiences, and gain competitive advantage.",
+    icon: <BrainCircuit size={24} />
   }
 ];
 

@@ -139,7 +139,6 @@ const HeroSection: React.FC = () => {
           transition={{ delay: 1.2, duration: 0.5 }}
         >
           <div className="flex flex-col items-center">
-            <span className="text-neutral-400 text-sm mb-2">Scroll Down</span>
             <div className="w-0.5 h-10 bg-primary/50 relative overflow-hidden">
               <motion.div 
                 className="absolute top-0 left-0 w-full h-full bg-primary"
