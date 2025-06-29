@@ -117,15 +117,15 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} CODENIX LABS. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
+            <Link to="/privacy-policy" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
               Privacy Policy
-            </a>
-            <a href="#" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
+            </Link>
+            <Link to="/terms-of-service" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
               Terms of Service
-            </a>
-            <a href="#" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
-              Cookies Policy
-            </a>
+            </Link>
+            <Link to="/cookie-policy" className="text-neutral-400 text-sm hover:text-primary transition-colors hover-effect">
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>
