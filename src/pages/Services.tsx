@@ -47,7 +47,7 @@ const services: Service[] = [
       "Performance optimization"
     ],
     color: "primary",
-    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://blog.zegocloud.com/wp-content/uploads/2024/03/types-of-web-development-services.jpg"
   },
   {
     id: 'mobile-development',
@@ -62,8 +62,8 @@ const services: Service[] = [
       "Ongoing maintenance and support",
       "Integration with existing systems"
     ],
-    color: "secondary",
-    image: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    color: "primary",
+    image: "https://media.istockphoto.com/id/1174690086/photo/software-developer-freelancer-working-at-home.jpg?s=612x612&w=0&k=20&c=loFqul06ggwtkwqSmzZnYfA72Vk7nFQOvDSzAN6YbtQ="
   },
   {
     id: 'ui-ux-design',
@@ -78,7 +78,7 @@ const services: Service[] = [
       "Usability testing",
       "Design systems"
     ],
-    color: "accent",
+    color: "primary",
     image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
@@ -94,8 +94,8 @@ const services: Service[] = [
       "Monitoring and optimization",
       "Multi-cloud management"
     ],
-    color: "success",
-    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    color: "primary",
+    image: "https://www.turningcloud.com/blog/wp-content/uploads/2021/09/all-about-cloud-computing.jpeg"
   },
   {
     id: 'data-analytics',
@@ -110,7 +110,7 @@ const services: Service[] = [
       "Data integration and ETL",
       "Performance metrics and KPIs"
     ],
-    color: "warning",
+    color: "primary",
     image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
@@ -127,7 +127,7 @@ const services: Service[] = [
       "Predictive maintenance"
     ],
     color: "primary",
-    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    image: "https://media.licdn.com/dms/image/v2/D5612AQFtdcGgjx_-AA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1696185088456?e=2147483647&v=beta&t=BfwixiTAF6cRvyEih49osqN6nsL52X3HsSGal-g0FXA"
   }
 ];
 
