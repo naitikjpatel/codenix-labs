@@ -1,4 +1,3 @@
-
 import express from 'express'
 import { connectDB } from './config/database.js'
 import dotenv from 'dotenv'
@@ -6,23 +5,19 @@ import cors from 'cors'
 import blogRoutes from './routes/blog.js'
 
 const app = express();
-
 dotenv.config();
-
 const PORT = process.env.PORT || 4000;
 
 connectDB();
 
-app.use(
-    cors({
-        origin: "https://codenix-labs.vercel.app/",
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
-    })
-);
+app.use(cors({
+    origin: "https://codenix-labs.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 app.use(express.json());
-
 app.use('/api/blogs', blogRoutes);
 
 app.get("/", (req, res) => {
