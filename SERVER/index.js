@@ -15,7 +15,7 @@ connectDB();
 
 app.use(
     cors({
-        origin: "https://codenix-labs-server.onrender.com/",
+        origin: "https://codenix-labs.vercel.app/",
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
