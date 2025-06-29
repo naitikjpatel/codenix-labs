@@ -37,9 +37,6 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/company/codenixlabs/" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
                 <Linkedin size={20} />
               </a>
-              {/* <a href="#" className="text-neutral-300 hover:text-primary transition-colors hover-effect">
-                <Github size={20} />
-              </a> */}
             </div>
           </div>
 
@@ -47,7 +44,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-orbitron text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Services','About', 'Contact'].map((item) => (
+              {['Home', 'Services','About', 'Blog', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 

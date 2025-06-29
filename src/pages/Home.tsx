@@ -12,23 +12,21 @@ import {
   ArrowRight,
   Users,
   LucideIcon,
-  CheckCircle
+  CheckCircle,
+  Calendar,
+  Clock,
+  User
 } from 'lucide-react';
 
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
 import StatsCounter from '../components/StatsCounter';
+import BlogCard from '../components/BlogCard';
+import { BlogService } from '../services/blogService';
+import { BlogPost } from '../types/blog';
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
-
-// Interface for featured projects
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  image: string;
-}
 
 // Interface for services
 interface Service {
@@ -60,30 +58,22 @@ const services: Service[] = [
   }
 ];
 
-// Featured projects
-const featuredProjects: Project[] = [
-  {
-    id: 1,
-    title: "Fintech Dashboard",
-    category: "Web Application",
-    image: "https://images.pexels.com/photos/7433823/pexels-photo-7433823.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    id: 2,
-    title: "E-Commerce Platform",
-    category: "Web & Mobile",
-    image: "https://images.pexels.com/photos/8386365/pexels-photo-8386365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
-    id: 3,
-    title: "Health & Fitness App",
-    category: "Mobile Application",
-    image: "https://images.pexels.com/photos/7948063/pexels-photo-7948063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  }
-];
-
 const Home: React.FC = () => {
+  const [featuredPosts, setFeaturedPosts] = React.useState<BlogPost[]>([]);
+
   useEffect(() => {
+    // Load featured blog posts
+    const loadFeaturedPosts = async () => {
+      try {
+        const posts = await BlogService.getFeaturedPosts(3);
+        setFeaturedPosts(posts);
+      } catch (error) {
+        console.error('Error loading featured posts:', error);
+      }
+    };
+
+    loadFeaturedPosts();
+
     // Parallax effect on scroll for featured projects
     gsap.utils.toArray('.project-card').forEach((element, i) => {
       gsap.fromTo(
@@ -155,83 +145,50 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Stats Counter */}
-      {/* cl : Counter To Add a Experience ,Project ,Active User */}
-      {/* <StatsCounter /> */}
-      
-      {/* Featured Projects */}
-      {/* cl : potfolio project */}
-      {/* <section className="py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h2 
-              className="section-title neon-text"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              Featured Work
-            </motion.h2>
-            <motion.p 
-              className="section-subtitle"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Explore our latest projects that showcase our expertise
-            </motion.p>
-          </div>
+      {/* Featured Blog Posts */}
+      {featuredPosts.length > 0 && (
+        <section className="py-20 bg-neutral-900 relative">
+          <div className="absolute inset-0 bg-glow opacity-20"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
-              <Link key={project.id} to="/portfolio" className="block group">
-                <motion.div 
-                  className="project-card relative rounded-xl overflow-hidden h-80 hover-effect"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm group-hover:bg-neutral-900/40 transition-all duration-300 z-10"></div>
-                  
-                  {/* Project Image */}
-                  {/* <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  /> */}
-                  
-                  {/* Content Overlay */}
-                  {/* <div className="absolute inset-0 z-20 p-6 flex flex-col justify-end">
-                    <span className="text-primary text-sm font-medium mb-2">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl font-orbitron font-bold mb-4 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <div className="transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                      <div className="flex items-center text-white font-medium">
-                        View Project <ArrowRight size={16} className="ml-2" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </Link> 
-            ))}
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="section-title neon-text"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                Latest Insights
+              </motion.h2>
+              <motion.p 
+                className="section-subtitle"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                Stay updated with the latest trends and insights from our experts
+              </motion.p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {featuredPosts.map((post, index) => (
+                <BlogCard key={post._id} post={post} index={index} featured />
+              ))}
+            </div>
+            
+            <div className="text-center">
+              <Link to="/blog" className="btn btn-outline neon-border hover-effect">
+                View All Articles
+              </Link>
+            </div>
           </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/portfolio" className="btn btn-outline neon-border hover-effect">
-              View All Projects
-            </Link>
-          </div>
-        </div>
-      </section> */}
+        </section>
+      )}
       
       {/* CTA Section */}
-      <section className="py-20 bg-neutral-900 relative">
+      <section className="py-20 relative">
         <div className="absolute inset-0 bg-glow opacity-20"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
