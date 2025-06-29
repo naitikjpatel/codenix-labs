@@ -1,7 +1,7 @@
 import type { BlogPost, BlogCategory } from "../types/blog"
 
 // API base URL - adjust this to match your backend
-const API_BASE_URL = "http://localhost:4000/api/blogs"
+const API_BASE_URL = `${import.meta.env.BASE_URL}/api/blogs`
 
 // API helper function
 const apiCall = async (endpoint: string, options: RequestInit = {}) => {
@@ -225,7 +225,7 @@ export class BlogService {
               slug: category
                 .toLowerCase()
                 .replace(/[^a-z0-9 -]/g, "")
-                .replace(/\s+/g, "-"),
+                .replace(/\s+/g, "-"),  
               description: `${category} related posts`,
               color: "#8948FF",
             }
