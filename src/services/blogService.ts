@@ -1,11 +1,12 @@
 import type { BlogPost, BlogCategory } from "../types/blog"
 
 // API base URL - adjust this to match your backend
-const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs`
+// const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs`
+
+const API_BASE_URL = `https://codenix-labs-server.onrender.com/api/blogs`
 
 // API helper function
 const apiCall = async (endpoint: string, options: RequestInit = {}) => {
-  console.log(API_BASE_URL);
   const url = `${API_BASE_URL}${endpoint}`
   const config = {
     headers: {
