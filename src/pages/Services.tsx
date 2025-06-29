@@ -28,6 +28,7 @@ interface Service {
   icon: React.ReactNode;
   features: string[];
   color: string;
+  image: string;
 }
 
 // Main services data
@@ -45,7 +46,8 @@ const services: Service[] = [
       "API development and integration",
       "Performance optimization"
     ],
-    color: "primary"
+    color: "primary",
+    image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 'mobile-development',
@@ -60,7 +62,8 @@ const services: Service[] = [
       "Ongoing maintenance and support",
       "Integration with existing systems"
     ],
-    color: "secondary"
+    color: "secondary",
+    image: "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 'ui-ux-design',
@@ -75,7 +78,8 @@ const services: Service[] = [
       "Usability testing",
       "Design systems"
     ],
-    color: "accent"
+    color: "accent",
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 'cloud-solutions',
@@ -90,7 +94,8 @@ const services: Service[] = [
       "Monitoring and optimization",
       "Multi-cloud management"
     ],
-    color: "success"
+    color: "success",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 'data-analytics',
@@ -105,7 +110,8 @@ const services: Service[] = [
       "Data integration and ETL",
       "Performance metrics and KPIs"
     ],
-    color: "warning"
+    color: "warning",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 'ai-solutions',
@@ -120,7 +126,8 @@ const services: Service[] = [
       "AI chatbots and virtual assistants",
       "Predictive maintenance"
     ],
-    color: "primary"
+    color: "primary",
+    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   }
 ];
 
@@ -294,12 +301,9 @@ const Services: React.FC = () => {
                 >
                   <div className="aspect-video rounded-xl overflow-hidden glass">
                     <img 
-                      src={`https://images.pexels.com/photos/${7000000 + index * 100000}/pexels-photo-${7000000 + index * 100000}.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`} 
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-                      }}
                     />
                   </div>
                   
