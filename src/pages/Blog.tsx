@@ -251,7 +251,7 @@ const Blog: React.FC = () => {
               >
                 Subscribe
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </section>
