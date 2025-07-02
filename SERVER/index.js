@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 
 app.use(cors({
-    origin: "https://codenix-labs.vercel.app",
+    origin: "https://www.codenixlabs.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
