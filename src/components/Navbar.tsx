@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Code2, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from "../Asset/codenix.svg"
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,24 +48,24 @@ const Navbar: React.FC = () => {
         scrolled ? 'py-3 bg-neutral-900/90 backdrop-blur-lg' : 'py-5 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover-effect">
             <motion.div
-              whileHover={{ rotate: 180 }}
+              whileHover={{ rotate: 10 }}
               transition={{ duration: 0.5 }}
               className="text-primary"
             >
-              <Code2 size={32} />
+              <img src={logo} height={100} width={100} alt="" />
             </motion.div>
-            <span className="font-orbitron text-xl font-bold">
+            <span className="text-2xl font-bold font-orbitron">
               CODENIX <span className="text-primary ms-0.5">LABS</span>
             </span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="items-center hidden space-x-8 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -92,7 +93,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary transition-colors hover-effect"
+              className="text-white transition-colors hover:text-primary hover-effect"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -108,9 +109,9 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-neutral-900/95 backdrop-blur-lg overflow-hidden"
+            className="overflow-hidden md:hidden bg-neutral-900/95 backdrop-blur-lg"
           >
-            <div className="container mx-auto px-4 py-4">
+            <div className="container px-4 py-4 mx-auto">
               <div className="flex flex-col space-y-4">
                 {navItems.map((item, index) => (
                   <motion.div
@@ -139,7 +140,7 @@ const Navbar: React.FC = () => {
                   transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
                   className="pt-2"
                 >
-                  <Link to="/contact" className="btn btn-primary w-full text-center block">
+                  <Link to="/contact" className="block w-full text-center btn btn-primary">
                     Get Started
                   </Link>
                 </motion.div>

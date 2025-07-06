@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
-import { Code2 } from 'lucide-react';
+import img from "../Asset/codenix.svg"
 
 const LoadingScreen: React.FC = () => {
   const loadingRef = useRef<HTMLDivElement>(null);
@@ -35,7 +35,7 @@ const LoadingScreen: React.FC = () => {
   return (
     <div 
       ref={loadingRef}
-      className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background"
     >
       <motion.div 
         className="loading-logo text-primary"
@@ -48,11 +48,11 @@ const LoadingScreen: React.FC = () => {
           delay: 0.2 
         }}
       >
-        <Code2 size={64} strokeWidth={1.5} />
+        <img src={img} height={150} width={150} alt="" />
       </motion.div>
       
       <motion.h1 
-        className="loading-text mt-6 font-orbitron text-3xl font-bold"
+        className="mt-6 text-3xl font-bold loading-text font-orbitron"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -60,12 +60,12 @@ const LoadingScreen: React.FC = () => {
         CODENIX<span className="text-primary ms-0.5">LABS</span>
       </motion.h1>
       
-      <div className="w-64 h-1 bg-neutral-800 rounded-full mt-8 overflow-hidden">
-        <div className="loading-progress h-full bg-primary w-0 rounded-full"></div>
+      <div className="w-64 h-1 mt-8 overflow-hidden rounded-full bg-neutral-800">
+        <div className="w-0 h-full rounded-full loading-progress bg-primary"></div>
       </div>
       
       <motion.p 
-        className="loading-text mt-4 text-neutral-400"
+        className="mt-4 loading-text text-neutral-400"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
