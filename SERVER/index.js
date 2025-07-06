@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 4000;
 
 connectDB();
 
+app.get('/health', (req, res) => res.status(200).send('OK'));
+
 app.use(cors({
     origin: "https://www.codenixlabs.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
