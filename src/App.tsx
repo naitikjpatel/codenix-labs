@@ -42,22 +42,22 @@ function App() {
     <div className="min-h-screen bg-background text-white">
       <Cursor />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <ScrollToTop/>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          {/* <Route path="/portfolio" element={<Portfolio />} /> */}
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/admin/blog" element={<AdminBlog />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-        </Routes>
-      </AnimatePresence>
+      {/* <AnimatePresence mode="wait"> */}
+      {/* <ScrollToTop /> */}
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/admin/blog" element={<AdminBlog />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+      </Routes>
+      {/* </AnimatePresence> */}
       <Footer />
     </div>
   );

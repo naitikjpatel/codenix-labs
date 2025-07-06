@@ -15,6 +15,7 @@ html {
 body {
   @apply bg-background font-spaceGrotesk text-white antialiased overflow-x-hidden;
   cursor: none;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -62,15 +63,19 @@ body {
 .animation-delay-100 {
   animation-delay: 100ms;
 }
+
 .animation-delay-200 {
   animation-delay: 200ms;
 }
+
 .animation-delay-300 {
   animation-delay: 300ms;
 }
+
 .animation-delay-400 {
   animation-delay: 400ms;
 }
+
 .animation-delay-500 {
   animation-delay: 500ms;
 }
@@ -78,7 +83,7 @@ body {
 /* Grid background */
 .grid-bg {
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
@@ -88,7 +93,12 @@ body {
   @apply text-neutral-300;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
   @apply text-white font-orbitron font-bold;
 }
 
@@ -108,7 +118,8 @@ body {
   @apply mb-4 leading-relaxed;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   @apply mb-4 pl-6;
 }
 
@@ -162,23 +173,23 @@ body {
   .btn {
     @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 relative overflow-hidden;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary/80;
   }
-  
+
   .btn-outline {
     @apply border border-primary text-primary hover:bg-primary/10;
   }
-  
+
   .section-title {
     @apply text-4xl md:text-5xl font-orbitron font-bold mb-4 text-white;
   }
-  
+
   .section-subtitle {
     @apply text-xl text-gray-300 max-w-3xl mx-auto mb-12;
   }
-  
+
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }

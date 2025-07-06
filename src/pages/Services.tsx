@@ -3,15 +3,12 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { 
-  Code, 
-  Smartphone, 
-  Globe, 
-  Palette, 
+import {
+  Smartphone,
+  Globe,
+  Palette,
   LineChart,
   Cloud,
-  Database,
-  ShieldCheck,
   BrainCircuit,
   CheckCircle,
   ArrowRight
@@ -135,7 +132,7 @@ const Services: React.FC = () => {
   useEffect(() => {
     // Animate section headers on scroll
     const sections = document.querySelectorAll('.service-section');
-    
+
     sections.forEach((section) => {
       gsap.fromTo(
         section.querySelector('.section-line'),
@@ -152,12 +149,12 @@ const Services: React.FC = () => {
         }
       );
     });
-    
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -168,10 +165,10 @@ const Services: React.FC = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative grid-bg">
         <div className="absolute inset-0 bg-glow opacity-40"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-orbitron font-bold mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -179,20 +176,20 @@ const Services: React.FC = () => {
             >
               Our <span className="text-primary">Services</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl text-neutral-300 mb-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              We offer end-to-end digital solutions that help businesses thrive 
+              We offer end-to-end digital solutions that help businesses thrive
               in today's technology-driven world.
             </motion.p>
           </div>
         </div>
       </section>
-      
+
       {/* Services Overview */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,7 +207,7 @@ const Services: React.FC = () => {
                 <div className={`w-16 h-16 rounded-lg bg-${service.color}/20 flex items-center justify-center mb-5 text-${service.color} group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                
+
                 {/* Title and Description */}
                 <h3 className="text-2xl font-orbitron font-bold mb-3 group-hover:text-primary transition-colors">
                   {service.title}
@@ -218,16 +215,16 @@ const Services: React.FC = () => {
                 <p className="text-neutral-300 mb-5">
                   {service.description}
                 </p>
-                
+
                 {/* View More Button */}
-                <a 
+                <a
                   href={`#${service.id}`}
                   className="inline-flex items-center text-primary hover:text-white transition-colors font-medium group"
                 >
                   View Details
-                  <ArrowRight 
-                    size={16} 
-                    className="ml-1 group-hover:ml-2 transition-all duration-300" 
+                  <ArrowRight
+                    size={16}
+                    className="ml-1 group-hover:ml-2 transition-all duration-300"
                   />
                 </a>
               </motion.div>
@@ -235,10 +232,10 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Detailed Service Sections */}
       {services.map((service, index) => (
-        <section 
+        <section
           key={service.id}
           id={service.id}
           className={`py-20 ${index % 2 === 0 ? 'bg-neutral-900' : ''} service-section relative`}
@@ -246,7 +243,7 @@ const Services: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Service Info */}
-              <div className={`w-full ${index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+              <div className={`w-[90%] md:w-full ${index % 2 !== 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                 <motion.div
                   className="relative z-10"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -258,15 +255,15 @@ const Services: React.FC = () => {
                     <div className="mr-3">{service.icon}</div>
                     <div className="h-px bg-primary section-line w-0"></div>
                   </div>
-                  
+
                   <h2 className="text-3xl font-orbitron font-bold mb-4">
                     {service.title}
                   </h2>
-                  
+
                   <p className="text-lg text-neutral-300 mb-6">
                     {service.description}
                   </p>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-start">
@@ -275,11 +272,11 @@ const Services: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                  
-                  <Link 
-                    to="/contact" 
+
+                  <Link
+                    to="/contact"
                     className="btn btn-primary neon-border hover-effect inline-block relative z-20"
-                    style={{ 
+                    style={{
                       position: 'relative',
                       zIndex: 20,
                       pointerEvents: 'auto'
@@ -289,9 +286,9 @@ const Services: React.FC = () => {
                   </Link>
                 </motion.div>
               </div>
-              
+
               {/* Image/Illustration */}
-              <div className={`w-full ${index % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+              <div className={`w-[90%] md:w-full ${index % 2 !== 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <motion.div
                   className="relative"
                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
@@ -300,36 +297,35 @@ const Services: React.FC = () => {
                   transition={{ duration: 0.6 }}
                 >
                   <div className="aspect-video rounded-xl overflow-hidden glass">
-                    <img 
+                    <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
-                  {/* Decorative elements */}
-                  <div className={`absolute -z-10 w-full h-full bg-${service.color}/20 rounded-xl -top-4 -right-4`}></div>
+
+
                 </motion.div>
               </div>
             </div>
           </div>
-          
+
           {/* Background glow */}
-          {index % 2 === 0 && <div className="absolute inset-0 bg-glow opacity-20"></div>}
+          {/* {index % 2 === 0 && <div className="absolute inset-0 bg-glow opacity-20"></div>} */}
         </section>
       ))}
-      
+
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-glow opacity-30"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="glass p-8 md:p-12 rounded-xl relative overflow-hidden text-center">
               {/* Background decorative elements */}
               <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/20 blur-3xl"></div>
               <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-secondary/20 blur-3xl"></div>
-              
+
               <motion.h2
                 className="text-3xl md:text-4xl font-orbitron font-bold mb-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -339,7 +335,7 @@ const Services: React.FC = () => {
               >
                 Need a custom solution?
               </motion.h2>
-              
+
               <motion.p
                 className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto"
                 initial={{ opacity: 0 }}
@@ -347,10 +343,10 @@ const Services: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                We understand that every business has unique requirements. Our team is ready to create 
+                We understand that every business has unique requirements. Our team is ready to create
                 a tailored solution that perfectly aligns with your goals and challenges.
               </motion.p>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
