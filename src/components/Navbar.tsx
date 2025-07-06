@@ -43,10 +43,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled ? 'py-3 bg-neutral-900/90 backdrop-blur-lg' : 'py-5 bg-transparent'
-      }`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled ? 'py-3 bg-neutral-900/90 backdrop-blur-lg' : 'py-5 bg-transparent'
+        }`}
     >
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -70,9 +69,8 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative hover-effect font-medium transition-colors hover:text-primary ${
-                  location.pathname === item.path ? 'text-primary' : 'text-white'
-                }`}
+                className={`relative hover-effect font-medium transition-colors hover:text-primary ${location.pathname === item.path ? 'text-primary' : 'text-white'
+                  }`}
               >
                 {item.name}
                 {location.pathname === item.path && (
@@ -109,7 +107,7 @@ const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden md:hidden bg-neutral-900/95 backdrop-blur-lg"
+            className=" md:hidden bg-neutral-900/95 backdrop-blur-lg"
           >
             <div className="container px-4 py-4 mx-auto">
               <div className="flex flex-col space-y-4">
@@ -124,9 +122,8 @@ const Navbar: React.FC = () => {
                   >
                     <Link
                       to={item.path}
-                      className={`block py-2 font-medium hover:pl-2 transition-all hover:text-primary ${
-                        location.pathname === item.path ? 'text-primary' : 'text-white'
-                      }`}
+                      className={`block py-2 font-medium hover:pl-2 transition-all hover:text-primary ${location.pathname === item.path ? 'text-primary' : 'text-white'
+                        }`}
                     >
                       {item.name}
                     </Link>

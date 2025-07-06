@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { 
-  Award, 
-  Users, 
-  Lightbulb, 
+import {
+  Award,
+  Users,
+  Lightbulb,
   Target,
   CheckCircle
 } from 'lucide-react';
@@ -108,12 +108,12 @@ const About: React.FC = () => {
         }
       }
     );
-    
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -124,10 +124,10 @@ const About: React.FC = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative grid-bg">
         <div className="absolute inset-0 bg-glow opacity-40"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-orbitron font-bold mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -135,25 +135,25 @@ const About: React.FC = () => {
             >
               About <span className="text-primary">Us</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-xl text-neutral-300 mb-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              We're a team of forward-thinking technologists passionate about 
+              We're a team of forward-thinking technologists passionate about
               creating innovative solutions for the digital age.
             </motion.p>
           </div>
         </div>
       </section>
-      
+
       {/* Our Story */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <motion.div 
+            <motion.div
               className="w-full lg:w-1/2"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -161,51 +161,51 @@ const About: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl font-orbitron font-bold mb-6">Our Story</h2>
-              
+
               <div className="space-y-4 text-lg">
                 <p>
                   At Codenix Labs, we are passionate technologists, creators, and problem-solvers committed to delivering innovative IT solutions that drive growth and digital transformation for businesses of all sizes
                 </p>
                 <p>
-                 Founded with a vision to simplify technology and empower progress, Codenix Labs brings together a team of skilled professionals with expertise across software development, web & mobile app development, cloud solutions, UI/UX design, and IT consulting. Whether you're a startup looking for a powerful digital presence or an enterprise in need of scalable solutions, we provide tailor-made services designed to meet your specific goals.
+                  Founded with a vision to simplify technology and empower progress, Codenix Labs brings together a team of skilled professionals with expertise across software development, web & mobile app development, cloud solutions, UI/UX design, and IT consulting. Whether you're a startup looking for a powerful digital presence or an enterprise in need of scalable solutions, we provide tailor-made services designed to meet your specific goals.
                 </p>
                 <p>
-                  Today, we're proud to work with clients ranging from ambitious startups to established 
-                  enterprises, helping them navigate the ever-changing digital landscape and transform their 
+                  Today, we're proud to work with clients ranging from ambitious startups to established
+                  enterprises, helping them navigate the ever-changing digital landscape and transform their
                   ideas into reality.
                 </p>
               </div>
             </motion.div>
-            
-            <motion.div 
-              className="w-full lg:w-1/2 relative"
+
+            <motion.div
+              className="w-[80%] md:w-full lg:w-1/2 relative"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <div className="rounded-xl overflow-hidden glass">
-                <img 
-                  src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                <img
+                  src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Our Team"
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -z-10 w-full h-full bg-primary/20 rounded-xl -top-4 -left-4"></div>
             </motion.div>
           </div>
         </div>
       </section>
-      
-      
-      
+
+
+
       {/* Our Values */}
       <section className="py-20 values-section relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="section-title neon-text"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ const About: React.FC = () => {
             >
               Our Values
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="section-subtitle"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -224,18 +224,18 @@ const About: React.FC = () => {
               The principles that guide our work and culture
             </motion.p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div key={index} className="value-card glass p-6 rounded-xl opacity-0 hover-effect">
                 <div className="w-14 h-14 rounded-lg bg-primary/20 flex items-center justify-center mb-5 text-primary">
                   {value.icon}
                 </div>
-                
+
                 <h3 className="text-xl font-orbitron font-bold mb-3">
                   {value.title}
                 </h3>
-                
+
                 <p className="text-neutral-300">
                   {value.description}
                 </p>
@@ -244,9 +244,9 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Team Section */}
-{/*       <section className="py-20 bg-neutral-900 relative">
+      {/*       <section className="py-20 bg-neutral-900 relative">
         <div className="absolute inset-0 bg-glow opacity-20"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -339,50 +339,50 @@ const About: React.FC = () => {
   </div>
 </section> */}
 
-{/* Technologies Section */}
-<section className="py-20 relative values-section">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <motion.h2 
-        className="section-title neon-text"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Technologies We Use
-      </motion.h2>
-      <motion.p 
-        className="section-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Our modern tech stack powers real-world impact
-      </motion.p>
-    </div>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
-      {['React', 'Flutter', 'Node.js', 'Spring Boot', 'Python', 'AWS', 'Docker', 'PostgreSQL', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'Firebase'].map((tech, idx) => (
-        <motion.div
-          key={idx}
-          className="glass py-4 rounded-xl text-primary font-semibold text-lg hover:scale-105 transition-transform duration-300"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 * idx, duration: 0.4 }}
-        >
-          {tech}
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+      {/* Technologies Section */}
+      <section className="py-20 relative values-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.h2
+              className="section-title neon-text"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Technologies We Use
+            </motion.h2>
+            <motion.p
+              className="section-subtitle"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Our modern tech stack powers real-world impact
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+            {['React', 'Flutter', 'Node.js', 'Spring Boot', 'Python', 'AWS', 'Docker', 'PostgreSQL', 'MongoDB', 'TypeScript', 'Tailwind CSS', 'Firebase'].map((tech, idx) => (
+              <motion.div
+                key={idx}
+                className="glass py-4 rounded-xl text-primary font-semibold text-lg hover:scale-105 transition-transform duration-300"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * idx, duration: 0.4 }}
+              >
+                {tech}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-neutral-900 relative">
         <div className="absolute inset-0 bg-glow opacity-30"></div>
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <motion.h2
@@ -394,7 +394,7 @@ const About: React.FC = () => {
             >
               Join Our Team
             </motion.h2>
-            
+
             <motion.p
               className="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
@@ -402,10 +402,10 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              We're always looking for talented individuals to join our team. If you're passionate about 
+              We're always looking for talented individuals to join our team. If you're passionate about
               technology and innovation, we'd love to hear from you.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
