@@ -59,7 +59,6 @@ const Navbar: React.FC = () => {
             >
               <img src={logo} height={120} width={120} alt="" />
             </motion.div>
-            
           </Link>
 
           {/* Desktop Menu */}
