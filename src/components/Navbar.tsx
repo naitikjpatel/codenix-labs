@@ -56,11 +56,8 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-primary"
             >
-              <img src={logo} height={100} width={100} alt="" />
+              <img src={logo} height={120} width={120} alt="" />
             </motion.div>
-            <span className="text-2xl font-bold font-orbitron">
-              CODENIX <span className="text-primary ms-0.5">LABS</span>
-            </span>
           </Link>
 
           {/* Desktop Menu */}
