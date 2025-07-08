@@ -185,7 +185,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Technologies We Master
+              Technologies We Excel In
             </motion.h2>
             <motion.p 
               className="section-subtitle"
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Cutting-edge tools and frameworks that power our innovative solutions
+              Advanced tools and modern frameworks that drive our creative solutions
             </motion.p>
           </div>
           
@@ -204,9 +204,9 @@ const Home: React.FC = () => {
               <div className="flex animate-scroll-left">
                 {[
                   'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
-                  'Docker', 'MongoDB', 'PostgreSQL', 'GraphQL', 'Next.js', 'Vue.js',
+                  'Docker', 'MongoDB', 'Next.js', 'Vue.js',
                   'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
-                  'Docker', 'MongoDB', 'PostgreSQL', 'GraphQL', 'Next.js', 'Vue.js'
+                  'Docker', 'MongoDB' 'Next.js', 'Vue.js'
                 ].map((tech, index) => (
                   <div
                     key={index}
