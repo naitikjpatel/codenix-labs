@@ -169,6 +169,33 @@ body {
   overflow: hidden;
 }
 
+/* Technology showcase animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
 @layer components {
   .btn {
     @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 relative overflow-hidden;

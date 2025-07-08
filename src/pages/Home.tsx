@@ -174,6 +174,177 @@ const Home: React.FC = () => {
         </section>
       )}
       
+      {/* Technology Showcase */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.h2 
+              className="section-title neon-text"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Technologies We Master
+            </motion.h2>
+            <motion.p 
+              className="section-subtitle"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Cutting-edge tools and frameworks that power our innovative solutions
+            </motion.p>
+          </div>
+          
+          {/* Moving Technology Row */}
+          <div className="relative">
+            <div className="flex overflow-hidden">
+              <div className="flex animate-scroll-left">
+                {[
+                  'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
+                  'Docker', 'MongoDB', 'PostgreSQL', 'GraphQL', 'Next.js', 'Vue.js',
+                  'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
+                  'Docker', 'MongoDB', 'PostgreSQL', 'GraphQL', 'Next.js', 'Vue.js'
+                ].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 mx-4 glass px-6 py-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:border-primary/40 transition-all duration-300"
+                  >
+                    <span className="text-lg font-medium text-white whitespace-nowrap">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Gradient overlays for smooth edges */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10"></div>
+          </div>
+          
+          {/* Second row moving in opposite direction */}
+          <div className="relative mt-8">
+            <div className="flex overflow-hidden">
+              <div className="flex animate-scroll-right">
+                {[
+                  'Spring Boot', 'Kubernetes', 'Redis', 'Firebase', 'TensorFlow', 'Django',
+                  'Angular', 'Svelte', 'Go', 'Rust', 'Swift', 'Kotlin',
+                  'Spring Boot', 'Kubernetes', 'Redis', 'Firebase', 'TensorFlow', 'Django',
+                  'Angular', 'Svelte', 'Go', 'Rust', 'Swift', 'Kotlin'
+                ].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 mx-4 glass px-6 py-4 rounded-xl bg-gradient-to-r from-secondary/10 to-accent/10 border border-secondary/20 hover:border-secondary/40 transition-all duration-300"
+                  >
+                    <span className="text-lg font-medium text-white whitespace-nowrap">
+                      {tech}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Gradient overlays for smooth edges */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background to-transparent z-10"></div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section */}
+      <section className="py-20 bg-neutral-900 relative">
+        <div className="absolute inset-0 bg-glow opacity-20"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.h2 
+              className="section-title neon-text"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Frequently Asked Questions
+            </motion.h2>
+            <motion.p 
+              className="section-subtitle"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Get answers to the most common questions about our services and process
+            </motion.p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  question: "How long does a typical project take?",
+                  answer: "Project timelines vary based on complexity and scope. A simple website typically takes 2-4 weeks, while complex web applications can take 2-6 months. We provide detailed timelines during our initial consultation and keep you updated throughout the development process."
+                },
+                {
+                  question: "What technologies do you specialize in?",
+                  answer: "We specialize in modern web technologies including React, Node.js, Python, Flutter for mobile apps, and cloud platforms like AWS. Our team stays current with the latest frameworks and tools to deliver cutting-edge solutions that meet your specific needs."
+                },
+                {
+                  question: "Do you provide ongoing support after launch?",
+                  answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, security patches, and feature enhancements. We provide various support packages tailored to your needs, ensuring your digital solution continues to perform optimally."
+                },
+                {
+                  question: "How do you ensure project quality and deadlines?",
+                  answer: "We follow agile development methodologies with regular milestone reviews, automated testing, and continuous integration. Our project management approach includes clear communication, regular updates, and quality assurance at every stage to ensure timely delivery of high-quality solutions."
+                }
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="glass p-6 rounded-xl hover-effect group"
+                >
+                  <div className="flex items-start mb-4">
+                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4 mt-1 group-hover:bg-primary/30 transition-colors">
+                      <span className="text-primary font-bold text-sm">Q</span>
+                    </div>
+                    <h3 className="text-lg font-orbitron font-bold text-white group-hover:text-primary transition-colors">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  
+                  <div className="ml-12">
+                    <p className="text-neutral-300 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Contact CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center mt-12"
+            >
+              <p className="text-neutral-300 mb-6">
+                Still have questions? We're here to help!
+              </p>
+              <Link to="/contact" className="btn btn-outline neon-border hover-effect">
+                Get in Touch
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-glow opacity-20"></div>
