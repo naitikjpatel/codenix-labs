@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { Code, Smartphone, Globe, Palette, LineChart, ArrowRight, Users, DivideIcon as LucideIcon, CheckCircle, Calendar, Clock, User, BrainCircuit } from 'lucide-react';
+import { Code, Smartphone, Globe, Palette, LineChart, ArrowRight, Users, DivideIcon as LucideIcon, CheckCircle, Calendar, Clock, User, BrainCircuit, ChevronDown, ChevronUp } from 'lucide-react';
 
 import HeroSection from '../components/HeroSection';
 import ServiceCard from '../components/ServiceCard';
@@ -45,6 +45,82 @@ const services: Service[] = [
   }
 ];
 
+// FAQ data
+const faqData = [
+  {
+    question: "How long does a typical project take?",
+    answer: "Project timelines vary based on complexity and scope. A simple website typically takes 2-4 weeks, while complex web applications can take 2-6 months. We provide detailed timelines during our initial consultation and keep you updated throughout the development process."
+  },
+  {
+    question: "What technologies do you specialize in?",
+    answer: "We specialize in modern web technologies including React, Node.js, Python, Flutter for mobile apps, and cloud platforms like AWS. Our team stays current with the latest frameworks and tools to deliver cutting-edge solutions that meet your specific needs."
+  },
+  {
+    question: "Do you provide ongoing support after launch?",
+    answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, security patches, and feature enhancements. We provide various support packages tailored to your needs, ensuring your digital solution continues to perform optimally."
+  },
+  {
+    question: "How do you ensure project quality and deadlines?",
+    answer: "We follow agile development methodologies with regular milestone reviews, automated testing, and continuous integration. Our project management approach includes clear communication, regular updates, and quality assurance at every stage to ensure timely delivery of high-quality solutions."
+  }
+];
+
+// FAQ Accordion Component
+const FAQAccordion: React.FC = () => {
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-4">
+      {faqData.map((faq, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="glass rounded-xl overflow-hidden hover-effect"
+        >
+          <button
+            onClick={() => toggleAccordion(index)}
+            className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+          >
+            <h3 className="text-lg font-orbitron font-bold text-white pr-4">
+              {faq.question}
+            </h3>
+            <div className="flex-shrink-0">
+              {openIndex === index ? (
+                <ChevronUp className="w-6 h-6 text-primary transition-transform duration-300" />
+              ) : (
+                <ChevronDown className="w-6 h-6 text-primary transition-transform duration-300" />
+              )}
+            </div>
+          </button>
+          
+          <motion.div
+            initial={false}
+            animate={{
+              height: openIndex === index ? "auto" : 0,
+              opacity: openIndex === index ? 1 : 0
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-6">
+              <div className="h-px bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 mb-4"></div>
+              <p className="text-neutral-300 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 const Home: React.FC = () => {
   const [featuredPosts, setFeaturedPosts] = React.useState<BlogPost[]>([]);
 
@@ -278,68 +354,7 @@ const Home: React.FC = () => {
             </motion.p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  question: "How long does a typical project take?",
-                  answer: "Project timelines vary based on complexity and scope. A simple website typically takes 2-4 weeks, while complex web applications can take 2-6 months. We provide detailed timelines during our initial consultation and keep you updated throughout the development process."
-                },
-                {
-                  question: "What technologies do you specialize in?",
-                  answer: "We specialize in modern web technologies including React, Node.js, Python, Flutter for mobile apps, and cloud platforms like AWS. Our team stays current with the latest frameworks and tools to deliver cutting-edge solutions that meet your specific needs."
-                },
-                {
-                  question: "Do you provide ongoing support after launch?",
-                  answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, security patches, and feature enhancements. We provide various support packages tailored to your needs, ensuring your digital solution continues to perform optimally."
-                },
-                {
-                  question: "How do you ensure project quality and deadlines?",
-                  answer: "We follow agile development methodologies with regular milestone reviews, automated testing, and continuous integration. Our project management approach includes clear communication, regular updates, and quality assurance at every stage to ensure timely delivery of high-quality solutions."
-                }
-              ].map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass p-6 rounded-xl hover-effect group"
-                >
-                  <div className="flex items-start mb-4">
-                    <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center mr-4 mt-1 group-hover:bg-primary/30 transition-colors">
-                      <span className="text-primary font-bold text-sm">Q</span>
-                    </div>
-                    <h3 className="text-lg font-orbitron font-bold text-white group-hover:text-primary transition-colors">
-                      {faq.question}
-                    </h3>
-                  </div>
-                  
-                  <div className="ml-12">
-                    <p className="text-neutral-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Contact CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center mt-12"
-            >
-              <p className="text-neutral-300 mb-6">
-                Still have questions? We're here to help!
-              </p>
-              <Link to="/contact" className="btn btn-outline neon-border hover-effect">
-                Get in Touch
-              </Link>
-            </motion.div>
-          </div>
+          <FAQAccordion />
         </div>
       </section>
       
