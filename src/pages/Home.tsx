@@ -206,7 +206,7 @@ const Home: React.FC = () => {
                   'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
                   'Docker', 'MongoDB', 'Next.js', 'Vue.js',
                   'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
-                  'Docker', 'MongoDB' 'Next.js', 'Vue.js'
+                  'Docker', 'MongoDB' ,'Next.js', 'Vue.js'
                 ].map((tech, index) => (
                   <div
                     key={index}
