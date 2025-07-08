@@ -192,7 +192,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               Advanced tools and modern frameworks that drive our creative solutions
             </motion.p>
