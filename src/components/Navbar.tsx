@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-primary"
             >
-              <img src={logo} height={120} width={120} alt="" />
+              <img src={logo} height={100} width={100} alt="" />
             </motion.div>
           </Link>
 
