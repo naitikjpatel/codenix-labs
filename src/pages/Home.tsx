@@ -203,10 +203,10 @@ const Home: React.FC = () => {
             <div className="flex overflow-hidden">
               <div className="flex animate-scroll-left">
                 {[
-                  'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
-                  'Docker', 'MongoDB', 'Next.js', 'Vue.js',
-                  'React', 'Node.js', 'TypeScript', 'Python', 'Flutter', 'AWS', 
-                  'Docker', 'MongoDB' ,'Next.js', 'Vue.js'
+                  'React', 'Node.js', 'TypeScript', 'JavaScript', 
+                   'Angular', 'Next.js', 'Vue.js',
+                  'React', 'Node.js', 'TypeScript', 'JavaScript', 
+                   'Angular' ,'Next.js', 'Vue.js'
                 ].map((tech, index) => (
                   <div
                     key={index}
@@ -230,10 +230,8 @@ const Home: React.FC = () => {
             <div className="flex overflow-hidden">
               <div className="flex animate-scroll-right">
                 {[
-                  'Spring Boot', 'Kubernetes', 'Redis', 'Firebase', 'TensorFlow', 'Django',
-                  'Angular', 'Svelte', 'Go', 'Rust', 'Swift', 'Kotlin',
-                  'Spring Boot', 'Kubernetes', 'Redis', 'Firebase', 'TensorFlow', 'Django',
-                  'Angular', 'Svelte', 'Go', 'Rust', 'Swift', 'Kotlin'
+                  'MongoDB', 'Flutter', 'Firebase', 'Python', 'Django', 'Docker', 'AWS',
+                   'MongoDB', 'Flutter', 'Firebase', 'Python', 'Django', 'Docker', 'AWS',
                 ].map((tech, index) => (
                   <div
                     key={index}
