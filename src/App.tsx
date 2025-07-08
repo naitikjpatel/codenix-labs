@@ -20,6 +20,7 @@ import AdminBlog from './pages/AdminBlog';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import CookiePolicy from './pages/CookiePolicy';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const location = useLocation();
@@ -39,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-white">
+    <div className="min-h-screen text-white bg-background">
       <Cursor />
       <Navbar />
       <AnimatePresence mode="wait">
@@ -59,6 +60,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
+      <Analytics/>
     </div>
   );
 }
