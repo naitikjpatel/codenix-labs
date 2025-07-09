@@ -20,7 +20,6 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="items-center inline-block mb-4 space-x-2 hover-effect">
-              <img src={logo} height={100} width={100} className='mx-auto' alt="" />
               <span className="text-xl font-bold font-orbitron">
                 CODENIX<span className="text-primary ms-0.5">LABS</span>
               </span>
@@ -90,8 +89,8 @@ const Footer: React.FC = () => {
               
               <li className="flex items-center">
                 <Phone size={20} className="mr-3 text-primary shrink-0" />
-                <a href="tel:+91 7405950263" className="transition-colors text-neutral-300 hover:text-primary hover-effect">
-                  +91 7405950263
+                <a href="tel:+91 8488080162" className="transition-colors text-neutral-300 hover:text-primary hover-effect">
+                  +91 8488080162
                 </a>
               </li>
               <li className="flex items-center">

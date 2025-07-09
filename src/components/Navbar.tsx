@@ -52,11 +52,13 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover-effect">
             <motion.div
-              whileHover={{ rotate: 10 }}
+              whileHover={{ rotate: 0 }}
               transition={{ duration: 0.5 }}
               className="text-primary"
             >
-              <img src={logo} height={100} width={100} alt="" />
+              <span className="text-2xl font-bold text-white font-orbitron">
+                CODENIX<span className="text-primary pl-2 ms-0.5">LABS</span>
+              </span>
             </motion.div>
           </Link>
 

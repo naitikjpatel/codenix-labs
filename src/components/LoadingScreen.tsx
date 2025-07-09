@@ -48,11 +48,10 @@ const LoadingScreen: React.FC = () => {
           delay: 0.2 
         }}
       >
-        <img src={img} height={150} width={150} alt="" />
       </motion.div>
       
       <motion.h1 
-        className="mt-6 text-3xl font-bold loading-text font-orbitron"
+        className="mt-6 text-4xl font-bold loading-text font-orbitron"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
