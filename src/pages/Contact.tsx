@@ -10,6 +10,7 @@ import {
   Instagram, 
   Twitter, 
   Linkedin, 
+  MessageCircle
   // Github
 } from 'lucide-react';
 
@@ -42,6 +43,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
+  
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+918488080162';
+    const message = 'Hello! I would like to know more about your services.';
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
   
   useEffect(() => {
     // Animate contact info items
@@ -150,8 +158,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-bold mb-1">Phone</h4>
-                      <a href="tel:+91 7405950263" className="text-neutral-300 hover:text-primary transition-colors">
-                        +91 7405950263
+                      <a href="tel:+91 8488080162" className="text-neutral-300 hover:text-primary transition-colors">
+                        +91 8488080162
                       </a>
                     </div>
                   </div>
@@ -196,6 +204,12 @@ const Contact: React.FC = () => {
                     <a href="https://www.linkedin.com/company/codenixlabs/" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Linkedin size={18} />
                     </a>
+                    <button 
+                      onClick={handleWhatsAppClick}
+                      className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-green-600 hover:text-white transition-colors hover-effect"
+                    >
+                      <MessageCircle size={18} />
+                    </button>
                     {/* <a href="#" className="bg-neutral-800 w-10 h-10 rounded-full flex items-center justify-center text-neutral-300 hover:bg-primary hover:text-white transition-colors hover-effect">
                       <Github size={18} />
                     </a> */}

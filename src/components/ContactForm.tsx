@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Loader2, CheckCircle } from 'lucide-react';
+import { Send, Loader2, CheckCircle, MessageCircle } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -137,6 +137,13 @@ const ContactForm = () => {
     setSubmitError('');
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+918488080162';
+    const message = 'Hello! I would like to know more about your services.';
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -172,6 +179,14 @@ const ContactForm = () => {
             >
               Send Another Message
             </button>
+            <button
+              type="button"
+              onClick={handleWhatsAppClick}
+              className="btn btn-primary px-6 py-2 rounded-lg bg-green-600 hover:bg-green-700 transition-all duration-300 flex items-center gap-2"
+            >
+              <MessageCircle size={16} />
+              WhatsApp Chat
+            </button>
           </div>
         </motion.div>
       ) : (
@@ -181,8 +196,18 @@ const ContactForm = () => {
               Get In Touch
             </h3>
             <p className="text-neutral-400">
-              Ready to start your project? Let's discuss your ideas!
+              Ready to start your project? Let's discuss your ideas! You can also reach us on WhatsApp for quick support.
             </p>
+            <div className="mt-4">
+              <button
+                type="button"
+                onClick={handleWhatsAppClick}
+                className="btn btn-outline border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto"
+              >
+                <MessageCircle size={16} />
+                Chat on WhatsApp
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -334,7 +359,7 @@ const ContactForm = () => {
 
           {/* Additional Info */}
           <div className="text-center text-xs text-neutral-500 mt-4">
-            We typically respond within 24 hours. Your information is secure and will not be shared.
+            We typically respond within 24 hours. Your information is secure and will not be shared. For immediate assistance, contact us on WhatsApp.
           </div>
         </form>
       )}

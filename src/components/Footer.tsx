@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from "../Asset/codenix.svg"
 import { 
   Code2, 
@@ -9,10 +9,28 @@ import {
   Instagram, 
   Twitter, 
   Linkedin, 
-  ArrowRight
+  ArrowRight,
+  MessageCircle
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+918488080162';
+    const message = 'Hello! I would like to know more about your services.';
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <footer className="pt-16 pb-8 bg-neutral-900">
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
@@ -37,6 +55,12 @@ const Footer: React.FC = () => {
               <a href="https://www.linkedin.com/company/codenixlabs/" className="transition-colors text-neutral-300 hover:text-primary hover-effect">
                 <Linkedin size={20} />
               </a>
+              <button 
+                onClick={handleWhatsAppClick}
+                className="transition-colors text-neutral-300 hover:text-primary hover-effect"
+              >
+                <MessageCircle size={20} />
+              </button>
             </div>
           </div>
 
@@ -46,13 +70,13 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {['Home', 'Services','About', 'Blog', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                    className="flex items-center transition-colors text-neutral-300 hover:text-primary hover-effect group"
+                  <button 
+                    onClick={() => handleNavigation(item === 'Home' ? '/' : `/${item.toLowerCase()}`)}
+                    className="flex items-center transition-colors text-neutral-300 hover:text-primary hover-effect group text-left"
                   >
                     <ArrowRight size={16} className="mr-2 transition-opacity opacity-0 group-hover:opacity-100" />
                     {item}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -70,13 +94,10 @@ const Footer: React.FC = () => {
                 'AI Integration'
               ].map((service) => (
                 <li key={service}>
-                  <Link 
-                    to="/services" 
-                    className="flex items-center transition-colors text-neutral-300 hover:text-primary hover-effect group"
-                  >
-                    <ArrowRight size={16} className="mr-2 transition-opacity opacity-0 group-hover:opacity-100" />
+                  <span className="flex items-center text-neutral-300 cursor-default">
+                    <ArrowRight size={16} className="mr-2 opacity-0" />
                     {service}
-                  </Link>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -99,6 +120,15 @@ const Footer: React.FC = () => {
                   codenixlabs@gmail.com
                 </a>
               </li>
+              <li className="flex items-center">
+                <MessageCircle size={20} className="mr-3 text-primary shrink-0" />
+                <button 
+                  onClick={handleWhatsAppClick}
+                  className="transition-colors text-neutral-300 hover:text-primary hover-effect text-left"
+                >
+                  WhatsApp Chat
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -112,15 +142,24 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} CODENIX LABS. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link to="/privacy-policy" className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect">
+            <button 
+              onClick={() => handleNavigation('/privacy-policy')}
+              className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect"
+            >
               Privacy Policy
-            </Link>
-            <Link to="/terms-of-service" className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect">
+            </button>
+            <button 
+              onClick={() => handleNavigation('/terms-of-service')}
+              className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect"
+            >
               Terms of Service
-            </Link>
-            <Link to="/cookie-policy" className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect">
+            </button>
+            <button 
+              onClick={() => handleNavigation('/cookie-policy')}
+              className="text-sm transition-colors text-neutral-400 hover:text-primary hover-effect"
+            >
               Cookie Policy
-            </Link>
+            </button>
           </div>
         </div>
       </div>
