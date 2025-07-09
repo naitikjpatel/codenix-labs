@@ -20,7 +20,6 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <Link to="/" className="items-center inline-block mb-4 space-x-2 hover-effect">
-              <img src={logo} height={100} width={100} className='mx-auto' alt="" />
               <span className="text-xl font-bold font-orbitron">
                 CODENIX<span className="text-primary ms-0.5">LABS</span>
               </span>
